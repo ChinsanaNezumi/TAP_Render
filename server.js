@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const FirebaseAccountjsonFileName = process.env.FIREBASE_SERVICE_ACCOUNT;
 //import firebase data manually
 
-import FirebaseAccountjsonFileData from './tapmath-14ae2-firebase-adminsdk-fbsvc-94da853f29.json' assert { type: 'json' };
+import FirebaseAccountjsonFileData from './tapmath-14ae2-firebase-adminsdk-fbsvc-94da853f29.json' with { type: 'json' };
 
 
 
