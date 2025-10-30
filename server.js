@@ -9,9 +9,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const FirebaseAccountjsonFileName = process.env.FIREBASE_SERVICE_ACCOUNT;
-// Using fetch instead 
-const response = await fetch(`./${FirebaseAccountjsonFileName}`);
-const FirebaseAccountjsonFileData = await response.json();
+//import firebase data manually
+
+import FirebaseAccountjsonFileData from './tapmath-14ae2-firebase-adminsdk-fbsvc-94da853f29.json' assert { type: 'json' };
+
+
 
 const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFileData);
 admin.initializeApp({
