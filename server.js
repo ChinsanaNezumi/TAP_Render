@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const FirebaseAccountjsonFileName = process.env.FIREBASE_SERVICE_ACCOUNT;
-const FirebaseAccountjsonFileData = require(`./${jsonFileName}`);
+const FirebaseAccountjsonFileData = require(`./${FirebaseAccountjsonFileName}`);
 
 
 const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFileData);
