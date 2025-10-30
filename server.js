@@ -9,8 +9,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const FirebaseAccountjsonFileName = process.env.FIREBASE_SERVICE_ACCOUNT;
-const FirebaseAccountjsonFileData = require(`./${FirebaseAccountjsonFileName}`);
-
+import(`./${FirebaseAccountjsonFileName}`, { assert: { type: 'json' } })
+  .then(module => {
+    const FirebaseAccountjsonFileData = module.default;
+    
+  })
 
 const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFileData);
 admin.initializeApp({
@@ -108,4 +111,10 @@ app.listen(PORT, () => {
 
 
 
-// In Node.js, require automatically parses JSON
+
+
+
+
+// Dynamic import (note: this returns a promise)
+
+  
