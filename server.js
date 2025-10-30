@@ -8,13 +8,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const FirebaseAccountjsonFilePath = process.env.FIREBASE_SERVICE_ACCOUNT;
+const FirebaseAccountjsonData = process.env.FIREBASE_SERVICE_ACCOUNT;
 
 
 
 
 
-const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFilePath);
+const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonData);
 admin.initializeApp({
   credential: admin.credential.cert(firebaseServiceAccount),
 });
