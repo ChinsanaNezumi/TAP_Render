@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const FirebaseAccountjsonFileName = process.env.FIREBASE_SERVICE_ACCOUNT;
-import FirebaseAccountjsonFileData from (`./${FirebaseAccountjsonFileName}`, { assert: { type: 'json' } }) 
+import FirebaseAccountjsonFileData from `./${FirebaseAccountjsonFileName}` { assert: { type: 'json' } }
 
 
 const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFileData);
