@@ -8,14 +8,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const FirebaseAccountjsonFileName = process.env.FIREBASE_SERVICE_ACCOUNT;
-//import firebase data manually
-
-import FirebaseAccountjsonFileData from './tapmath-14ae2-firebase-adminsdk-fbsvc-94da853f29.json' with { type: 'json' };
+const FirebaseAccountjsonFilePath = process.env.FIREBASE_SERVICE_ACCOUNT;
 
 
 
-const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFileData);
+
+
+const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFilePath);
 admin.initializeApp({
   credential: admin.credential.cert(firebaseServiceAccount),
 });
