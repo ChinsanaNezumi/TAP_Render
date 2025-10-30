@@ -8,7 +8,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const firebaseServiceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+const FirebaseAccountjsonFileName = process.env.FIREBASE_SERVICE_ACCOUNT;
+const FirebaseAccountjsonFileData = require(`./${jsonFileName}`);
+
+
+const firebaseServiceAccount = JSON.parse(FirebaseAccountjsonFileData);
 admin.initializeApp({
   credential: admin.credential.cert(firebaseServiceAccount),
 });
@@ -95,3 +99,13 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
+
+
+
+
+
+
+
+// In Node.js, require automatically parses JSON
